@@ -1,7 +1,7 @@
 # C++ Programming Reference Project
 
 ## Overview
-This Visual Studio project is intended to be used as a quick reference for implementing and using various programming concepts C++. The repository contains multiple class examples and can be used as a foundation for learning, teaching, or developing larger projects.
+This Visual Studio project is intended to be used as a quick reference for implementing and using various programming concepts in C++. The repository contains multiple class examples and can be used as a foundation for learning, teaching, or developing larger projects.
 
 ## Planned Features
 * Data Structures: Examples of common data structures like queues, stacks, linked lists, and more.
