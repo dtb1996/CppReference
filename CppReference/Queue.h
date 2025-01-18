@@ -62,11 +62,6 @@ public:
 	void PrintAllCars() const;
 
 	/**
-	* Adds the demo list of cars to the queue
-	*/
-	void AddDemoCars();
-
-	/**
 	* Runs a basic demo of the class functions
 	*/
 	void Demo();

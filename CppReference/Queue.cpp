@@ -1,7 +1,5 @@
 #include "Queue.h"
 
-#define DEMO_CARS {"Volvo", "BMW", "Ford", "Mazda"}
-
 Queue::Queue()
 {
 	
@@ -77,40 +75,68 @@ void Queue::PrintAllCars() const
 	}
 }
 
-void Queue::AddDemoCars()
-{
-	std::string demoCars[4] = DEMO_CARS;
-
-	for (const auto& car : demoCars)
-	{
-		cars.push(car);
-	}
-}
-
 void Queue::Demo()
 {
-	std::cout << "################################## Running Queue Demo ##################################\n\n";
+	std::cout << "\n################################## QUEUE DEMO ##################################\n\n";
 
-	std::cout << "Adding demo cars:\n";
-	this->AddDemoCars();
-	this->PrintAllCars();
+	int choice;
+	
+	do
+	{
+		std::cout << "\nCHOOSE AN ACTION:\n";
+		std::cout << "[1] Add one car\n"
+				  << "[2] Add multiple cars\n"
+				  << "[3] Look at the next car in the queue\n"
+				  << "[4] Look at the last car in the queue\n"
+				  << "[5] Remove the next car from the queue\n"
+				  << "[6] Remove the last car from the queue\n"
+				  << "[7] Check if the queue is empty\n"
+				  << "[8] Get the total number of cars in the queue\n"
+				  << "[0] Quit\n";
 
-	std::cout << "Adding one car:\n";
-	this->AddCar("Subaru");
-	this->PrintAllCars();
+		while (true) {
+			if (std::cin >> choice) {
+				break;
+			}
+			else {
+				std::cout << "Invalid input. Please enter an integer.\n";
+				std::cin.clear(); // Clear the error state
+				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Discard the remaining input
+			}
+		}
 
-	std::cout << "Adding multiple cars:\n";
-	std::vector<std::string> newCars = { "Toyota", "Nissan", "Jeep" };
-	this->AddCars(newCars);
-	this->PrintAllCars();
+		std::cout << "\n";
 
-	std::cout << "Remove next car:\n";
-	this->RemoveNextCar();
-	this->PrintAllCars();
+		std::string model = "";
 
-	std::cout << "Remove last car:\n";
-	this->RemoveLastCar();
-	this->PrintAllCars();
+		switch (choice)
+		{
+			case 1:
+				std::cout << "Enter a model name for the car you would like to add:\n";
+				std::cin >> model;
+				cars.push(model);
+				break;
+			case 2:
+				do
+				{
+					std::cout << "Enter a model name for the car you would like to add or enter 0 if finished:\n";
+					if (model != "0")
+					{
+						std::cin >> model;
+						cars.push(model);
 
-	std::cout << "\n";
+						std::cout << "\n";
+						this->PrintAllCars();
+						std::cout << "\n";
+					}
+				} while (model != "0");
+				break;
+			default:
+				std::cout << "Invalid choice. Please try again.\n";
+		}
+
+		std::cout << "\n";
+		this->PrintAllCars();
+
+	} while (choice != 0);
 }
