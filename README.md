@@ -12,7 +12,7 @@ This Visual Studio project is intended to be used as a quick reference for imple
 
 ## Getting Started
 ### Prerequisites
-* Visual Studio configured to run C++ console applications
+* Visual Studio or other IDE configured to run C++ console applications
 
 ### Cloning the repository
 ```
@@ -21,7 +21,8 @@ git clone https://github.com/dtb1996/CppReference.git
 
 ## Classes Overview
 ### Data Structures
-* Queue: demonstrates push, pop, peek
+* **Queue**: demonstrates push, pop, front, back, size, and empty functions
+* **Stack**: demostrates push, pop, top, size, and empty functions
 
 More to come!
 
