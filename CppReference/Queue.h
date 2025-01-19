@@ -42,7 +42,7 @@ public:
 	void RemoveNextCar();
 
 	/**
-	* Returns the last car from the queue
+	* Removes the last car from the queue
 	*/
 	void RemoveLastCar();
 
@@ -68,6 +68,4 @@ public:
 
 private:
 	std::queue<std::string> cars;
-
-
 };

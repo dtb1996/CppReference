@@ -1,4 +1,5 @@
 #include "Queue.h"
+#include <string>
 
 Queue::Queue()
 {
@@ -111,6 +112,8 @@ void Queue::Demo()
 
 		switch (choice)
 		{
+			case 0: 
+				break;
 			case 1:
 				std::cout << "Enter a model name for the car you would like to add:\n";
 				std::cin >> model;
@@ -126,17 +129,38 @@ void Queue::Demo()
 						cars.push(model);
 
 						std::cout << "\n";
-						this->PrintAllCars();
+						PrintAllCars();
 						std::cout << "\n";
 					}
 				} while (model != "0");
+				break;
+			case 3:
+				std::cout << "Next car in the queue: " << PeekNextCar() << "\n";
+				break;
+			case 4:
+				std::cout << "Last car in the queue: " << PeekLastCar() << "\n";
+				break;
+			case 5:
+				std::cout << "Removing the next car from the queue: " << PeekNextCar() << "\n";
+				RemoveNextCar();
+				break;
+			case 6:
+				std::cout << "Removing the last car from the queue: " << PeekLastCar() << "\n";
+				RemoveLastCar();
+				break;
+			case 7:
+				std::cout << "The queue is " << (IsEmpty() ? "" : "not") << " empty\n";
+				break;
+			case 8:
+				std::cout << "There " << (NumCars() == 1 ? ("is "  + std::to_string(NumCars()) + " car" ) : 
+														   ("are " + std::to_string(NumCars()) + " cars")) << " in the queue\n";
 				break;
 			default:
 				std::cout << "Invalid choice. Please try again.\n";
 		}
 
 		std::cout << "\n";
-		this->PrintAllCars();
+		PrintAllCars();
 
 	} while (choice != 0);
 }

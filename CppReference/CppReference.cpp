@@ -8,6 +8,8 @@ int main()
 {
     int choice;
 
+    std::cout << "\n################################## MAIN MENU ##################################\n\n";
+
     do
     {
         std::cout << "CHOOSE A DEMO TO RUN:\n";
@@ -27,11 +29,17 @@ int main()
 
         std::cout << "\n";
 
+        Queue carQueue;
+
         switch (choice)
         {
-        case 1:
-            Queue carQueue;
-            carQueue.Demo();
+            case 0:
+                break;
+            case 1:
+                carQueue.Demo();
+                break;
+            default:
+                std::cout << "Invalid choice. Please try again.\n";
         }
 
         std::cout << "\n";
