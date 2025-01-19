@@ -117,7 +117,7 @@ void Queue::Demo()
 			case 1:
 				std::cout << "Enter a model name for the car you would like to add:\n";
 				std::cin >> model;
-				cars.push(model);
+				AddCar(model);
 				break;
 			case 2:
 				do
@@ -126,7 +126,7 @@ void Queue::Demo()
 					if (model != "0")
 					{
 						std::cin >> model;
-						cars.push(model);
+						AddCar(model);
 
 						std::cout << "\n";
 						PrintAllCars();
