@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include "Queue.h"
+#include "Stack.h"
 
 int main()
 {
@@ -14,6 +15,7 @@ int main()
     {
         std::cout << "CHOOSE A DEMO TO RUN:\n";
         std::cout << "[1] Queue\n"
+                  << "[2] Stack\n"
                   << "[0] Quit\n";
 
         while (true) {
@@ -30,6 +32,7 @@ int main()
         std::cout << "\n";
 
         Queue carQueue;
+        Stack carStack;
 
         switch (choice)
         {
@@ -37,6 +40,9 @@ int main()
                 break;
             case 1:
                 carQueue.Demo();
+                break;
+            case 2:
+                carStack.Demo();
                 break;
             default:
                 std::cout << "Invalid choice. Please try again.\n";

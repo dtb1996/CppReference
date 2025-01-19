@@ -153,7 +153,8 @@ void Queue::Demo()
 				break;
 			case 8:
 				std::cout << "There " << (NumCars() == 1 ? ("is "  + std::to_string(NumCars()) + " car" ) : 
-														   ("are " + std::to_string(NumCars()) + " cars")) << " in the queue\n";
+														   ("are " + std::to_string(NumCars()) + " cars"))
+						  << " in the queue\n";
 				break;
 			default:
 				std::cout << "Invalid choice. Please try again.\n";
