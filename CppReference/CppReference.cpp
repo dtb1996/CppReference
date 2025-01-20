@@ -4,6 +4,7 @@
 #include <iostream>
 #include "Queue.h"
 #include "Stack.h"
+#include "LinkedList.h"
 
 int main()
 {
@@ -16,6 +17,7 @@ int main()
         std::cout << "CHOOSE A DEMO TO RUN:\n";
         std::cout << "[1] Queue\n"
                   << "[2] Stack\n"
+                  << "[3] Singly Linked List\n"
                   << "[0] Quit\n";
 
         while (true) {
@@ -33,6 +35,7 @@ int main()
 
         Queue carQueue;
         Stack carStack;
+        SinglyLinkedList singlyLinkedList;
 
         switch (choice)
         {
@@ -44,6 +47,8 @@ int main()
             case 2:
                 carStack.Demo();
                 break;
+            case 3:
+                singlyLinkedList.Demo();
             default:
                 std::cout << "Invalid choice. Please try again.\n";
         }

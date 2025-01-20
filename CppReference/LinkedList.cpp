@@ -1,9 +1,9 @@
 #include "LinkedList.h"
+#include <string>
 
 SinglyLinkedList::SinglyLinkedList()
 {
-	singlyLinkedHead->item = "";
-	singlyLinkedHead->next = nullptr;
+
 }
 
 void SinglyLinkedList::InsertNodeAtBeginning(const std::string value)
@@ -72,7 +72,7 @@ void SinglyLinkedList::RemoveLastNode()
 
 	// Find the second to last node
 	SinglyLinkedNode* secondToLast = singlyLinkedHead;
-	while (secondToLast->next != nullptr)
+	while (secondToLast->next->next != nullptr)
 	{
 		secondToLast = secondToLast->next;
 	}
@@ -168,7 +168,7 @@ void SinglyLinkedList::PrintAllValues()
 	while (current != nullptr)
 	{
 		// Print the current item value
-		std::cout << current->item << (current->next != nullptr) ? ", " : "";
+		std::cout << current->item << ((current->next != nullptr) ? ", " : ""); //TODO: fix access violation bug
 
 		// Set current to next node
 		current = current->next;
@@ -177,9 +177,101 @@ void SinglyLinkedList::PrintAllValues()
 	std::cout << "\n";
 }
 
+void SinglyLinkedList::Demo()
+{
+	std::cout << "\n############################ SINGLY LINKED LIST DEMO ##################################\n\n";
+
+	int choice;
+
+	do
+	{
+		std::cout << "\nCHOOSE AN ACTION:\n";
+		std::cout << "[1] Insert item at beginning of list\n"
+				  << "[2] Insert item at end of list\n"
+				  << "[3] Remove item at beginning of list\n"
+				  << "[4] Remove item at end of list\n"
+				  << "[5] Remove node at specific position\n"
+				  << "[6] Check number of items in the list\n"
+			      << "[7] Check if the list is empty\n"
+				  << "[8] Search for an item\n"
+				  << "[0] Quit\n";
+
+		while (true) {
+			if (std::cin >> choice) {
+				break;
+			}
+			else {
+				std::cout << "Invalid input. Please enter an integer.\n";
+				std::cin.clear(); // Clear the error state
+				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Discard the remaining input
+			}
+		}
+
+		std::cout << "\n";
+
+		std::string item = "";
+		int position = 0;
+
+		switch (choice)
+		{
+		case 0:
+			break;
+		case 1:
+			std::cout << "Enter an item to add to the beginning of the list:\n";
+			std::cin >> item;
+			InsertNodeAtBeginning(item);
+			break;
+		case 2:
+			std::cout << "Enter an item to add to the end of the list:\n";
+			std::cin >> item;
+			InsertNodeAtEnd(item);
+			break;
+		case 3:
+			std::cout << "Removing the first item from the list:\n";
+			RemoveFirstNode();
+			break;
+		case 4:
+			std::cout << "Removing the last item from the list:\n";
+			RemoveLastNode();
+			break;
+		case 5:
+			std::cout << "Enter an item position to remove from the list:\n";
+			while (true) {
+				if (std::cin >> position) {
+					break;
+				}
+				else {
+					std::cout << "Invalid input. Please enter an integer.\n";
+					std::cin.clear(); // Clear the error state
+					std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Discard the remaining input
+				}
+			}
+			RemoveNodeAtPosition(position);
+			break;
+		case 6:
+			std::cout << "There " << (GetListLength() == 1 ? ("is " + std::to_string(GetListLength()) + " item") :
+															 ("are " + std::to_string(GetListLength()) + " items"))
+								  << " in the queue\n";
+			break;
+		case 7:
+			std::cout << "The list is " << (IsEmpty() ? "" : "not") << " empty\n";
+			break;
+		case 8:
+			std::cout << "Enter an item to search for:\n";
+			std::cin >> item;
+			std::cout << "The item was " << (SearchForValue(item) ? "" : "not ") << "found\n";
+			break;
+		default:
+			std::cout << "Invalid choice. Please try again.\n";
+		}
+
+		std::cout << "\n";
+		PrintAllValues();
+
+	} while (choice != 0);
+}
+
 DoublyLinkedList::DoublyLinkedList()
 {
-	doublyLinkedHead->item = "";
-	doublyLinkedHead->previous = nullptr;
-	doublyLinkedHead->next = nullptr;
+
 }

@@ -69,6 +69,11 @@ public:
 	*/
 	void PrintAllValues();
 
+	/**
+	* Runs a basic demo of the class functions
+	*/
+	void Demo();
+
 private:
 	SinglyLinkedNode* singlyLinkedHead;
 };
