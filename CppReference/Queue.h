@@ -10,41 +10,41 @@ public:
 	Queue();
 
 	/**
-	* Adds a car to the end of the queue
-	* @param car The name of the car to be added
+	* Adds a item to the end of the queue
+	* @param itemToAdd The name of the item to be added
 	*/
-	void AddCar(const std::string newCar);
+	void AddItem(const std::string itemToAdd);
 
 	/**
-	* Adds the specified cars to the end of the queue
-	* @param newCars The names of the cars to be added
+	* Adds the specified items to the end of the queue
+	* @param itemsToAdd The names of the items to be added
 	*/
-	void AddCars(const std::vector<std::string>& newCars);
+	void AddMultipleItems(const std::vector<std::string>& itemsToAdd);
 
 	/**
-	* Returns the entire queue of cars
+	* Returns the entire queue of items
 	*/
-	std::queue<std::string> GetAllCars() const;
+	std::queue<std::string> GetAllItems() const;
 
 	/**
-	* Returns the name of the next car
+	* Returns the name of the next item
 	*/
-	std::string PeekNextCar() const;
+	std::string PeekNextItem() const;
 
 	/**
-	* Returns the name of the car at the end
+	* Returns the name of the item at the end
 	*/
-	std::string PeekLastCar() const;
+	std::string PeekLastItem() const;
 
 	/**
-	* Removes the next car from the queue
+	* Removes the next item from the queue
 	*/
-	void RemoveNextCar();
+	void RemoveNextItem();
 
 	/**
-	* Removes the last car from the queue
+	* Removes the last item from the queue
 	*/
-	void RemoveLastCar();
+	void RemoveLastItem();
 
 	/**
 	* Returns true if the queue is empty, otherwise false
@@ -52,14 +52,14 @@ public:
 	bool IsEmpty();
 
 	/**
-	* Returns the total number of cars in queue
+	* Returns the total number of items in queue
 	*/
-	int NumCars();
+	int NumItems();
 
 	/**
-	* Prints the name of each car in the queue
+	* Prints the name of each item in the queue
 	*/
-	void PrintAllCars() const;
+	void PrintAllItems() const;
 
 	/**
 	* Runs a basic demo of the class functions
@@ -67,5 +67,5 @@ public:
 	void Demo();
 
 private:
-	std::queue<std::string> cars;
+	std::queue<std::string> items;
 };

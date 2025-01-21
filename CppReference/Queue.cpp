@@ -6,73 +6,73 @@ Queue::Queue()
 	
 }
 
-void Queue::AddCar(const std::string newCar)
+void Queue::AddItem(const std::string itemToAdd)
 {
-	cars.push(newCar);
+	items.push(itemToAdd);
 }
 
-void Queue::AddCars(const std::vector<std::string>& newCars)
+void Queue::AddMultipleItems(const std::vector<std::string>& itemsToAdd)
 {
-	for (const std::string& newCar : newCars)
+	for (const std::string& item : itemsToAdd)
 	{
-		cars.push(newCar);
+		items.push(item);
 	}
 }
 
-std::queue<std::string> Queue::GetAllCars() const
+std::queue<std::string> Queue::GetAllItems() const
 {
-	return cars;
+	return items;
 }
 
-std::string Queue::PeekNextCar() const
+std::string Queue::PeekNextItem() const
 {
-	return cars.front();
+	return items.front();
 }
 
-std::string Queue::PeekLastCar() const
+std::string Queue::PeekLastItem() const
 {
-	return cars.back();
+	return items.back();
 }
 
-void Queue::RemoveNextCar()
+void Queue::RemoveNextItem()
 {
-	cars.pop();
+	items.pop();
 }
 
-void Queue::RemoveLastCar()
+void Queue::RemoveLastItem()
 {
-	std::queue<std::string> tempCars;
-	int queueSize = cars.size();
+	std::queue<std::string> tempItems;
+	int queueSize = items.size();
 
 	for (int i = 0; i < queueSize - 1; i++)
 	{
-		tempCars.push(cars.front());
-		cars.pop();
+		tempItems.push(items.front());
+		items.pop();
 	}
 
-	cars = tempCars;
+	items = tempItems;
 }
 
 bool Queue::IsEmpty()
 {
-	return cars.empty();
+	return items.empty();
 }
 
-int Queue::NumCars()
+int Queue::NumItems()
 {
-	return cars.size();
+	return items.size();
 }
 
-void Queue::PrintAllCars() const
+void Queue::PrintAllItems() const
 {
-	std::queue<std::string> tempCars = cars;
+	std::queue<std::string> tempItems = items;
 
-	std::cout << "Cars in queue: ";
+	std::cout << "Items in queue: ";
 
-	for (int i = 0; i < cars.size(); i++)
+	for (int i = 0; i < items.size(); i++)
 	{
-		std::cout << tempCars.front() << (i == (cars.size() - 1) ? "\n" : ", ");
-		tempCars.pop();
+		std::cout << tempItems.front() << (i == (items.size() - 1) ? "\n" : ", ");
+		tempItems.pop();
 	}
 }
 
@@ -85,14 +85,14 @@ void Queue::Demo()
 	do
 	{
 		std::cout << "\nCHOOSE AN ACTION:\n";
-		std::cout << "[1] Add one car\n"
-				  << "[2] Add multiple cars\n"
-				  << "[3] Look at the next car in the queue\n"
-				  << "[4] Look at the last car in the queue\n"
-				  << "[5] Remove the next car from the queue\n"
-				  << "[6] Remove the last car from the queue\n"
+		std::cout << "[1] Add one item\n"
+				  << "[2] Add multiple items\n"
+				  << "[3] Look at the next item in the queue\n"
+				  << "[4] Look at the last item in the queue\n"
+				  << "[5] Remove the next item from the queue\n"
+				  << "[6] Remove the last item from the queue\n"
 				  << "[7] Check if the queue is empty\n"
-				  << "[8] Get the total number of cars in the queue\n"
+				  << "[8] Get the total number of items in the queue\n"
 				  << "[0] Quit\n";
 
 		while (true) {
@@ -115,45 +115,45 @@ void Queue::Demo()
 			case 0: 
 				break;
 			case 1:
-				std::cout << "Enter a model name for the car you would like to add:\n";
+				std::cout << "Enter an item you would like to add:\n";
 				std::cin >> model;
-				AddCar(model);
+				AddItem(model);
 				break;
 			case 2:
 				do
 				{
-					std::cout << "Enter a model name for the car you would like to add or enter 0 if finished:\n";
+					std::cout << "Enter an item you would like to add or enter 0 if finished:\n";
+					std::cin >> model;
 					if (model != "0")
 					{
-						std::cin >> model;
-						AddCar(model);
+						AddItem(model);
 
 						std::cout << "\n";
-						PrintAllCars();
+						PrintAllItems();
 						std::cout << "\n";
 					}
 				} while (model != "0");
 				break;
 			case 3:
-				std::cout << "Next car in the queue: " << PeekNextCar() << "\n";
+				std::cout << "Next item in the queue: " << PeekNextItem() << "\n";
 				break;
 			case 4:
-				std::cout << "Last car in the queue: " << PeekLastCar() << "\n";
+				std::cout << "Last item in the queue: " << PeekLastItem() << "\n";
 				break;
 			case 5:
-				std::cout << "Removing the next car from the queue: " << PeekNextCar() << "\n";
-				RemoveNextCar();
+				std::cout << "Removing the next item from the queue: " << PeekNextItem() << "\n";
+				RemoveNextItem();
 				break;
 			case 6:
-				std::cout << "Removing the last car from the queue: " << PeekLastCar() << "\n";
-				RemoveLastCar();
+				std::cout << "Removing the last item from the queue: " << PeekLastItem() << "\n";
+				RemoveLastItem();
 				break;
 			case 7:
-				std::cout << "The queue is " << (IsEmpty() ? "" : "not") << " empty\n";
+				std::cout << "The queue is " << (IsEmpty() ? "" : "not ") << "empty\n";
 				break;
 			case 8:
-				std::cout << "There " << (NumCars() == 1 ? ("is "  + std::to_string(NumCars()) + " car" ) : 
-														   ("are " + std::to_string(NumCars()) + " cars"))
+				std::cout << "There " << (NumItems() == 1 ? ("is " + std::to_string(NumItems()) + " item") :
+					("are " + std::to_string(NumItems()) + " items"))
 						  << " in the queue\n";
 				break;
 			default:
@@ -161,7 +161,7 @@ void Queue::Demo()
 		}
 
 		std::cout << "\n";
-		PrintAllCars();
+		PrintAllItems();
 
 	} while (choice != 0);
 }

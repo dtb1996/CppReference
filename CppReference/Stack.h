@@ -10,36 +10,36 @@ public:
 	Stack();
 
 	/**
-	* Adds a car to stack
-	* @param car The name of the car to be added
+	* Adds a item to stack
+	* @param itemToAdd The name of the item to be added
 	*/
-	void AddCar(const std::string newCar);
+	void AddItem(const std::string itemToAdd);
 
 	/**
-	* Adds the specified cars to the stack
-	* @param newCars The names of the cars to be added
+	* Adds the specified items to the stack
+	* @param itemsToAdd The names of the items to be added
 	*/
-	void AddCars(const std::vector<std::string>& newCars);
+	void AddItems(const std::vector<std::string>& itemsToAdd);
 
 	/**
-	* Returns the entire stack of cars
+	* Returns the entire stack of items
 	*/
-	std::stack<std::string> GetAllCars() const;
+	std::stack<std::string> GetAllItems() const;
 
 	/**
-	* Returns the name of the next car at the top of the stack
+	* Returns the name of the next item at the top of the stack
 	*/
-	std::string PeekNextCar() const;
+	std::string PeekNextItem() const;
 
 	/**
-	* Changes the car at the top of the stack
+	* Changes the item at the top of the stack
 	*/
-	std::string ChangeNextCar(const std::string newCar);
+	std::string ChangeNextItem(const std::string newItem);
 
 	/**
-	* Removes the next car from the top of the stack
+	* Removes the next item from the top of the stack
 	*/
-	void RemoveNextCar();
+	void RemoveNextItem();
 
 	/**
 	* Returns true if the stack is empty, otherwise false
@@ -47,14 +47,14 @@ public:
 	bool IsEmpty();
 
 	/**
-	* Returns the total number of cars in the stack
+	* Returns the total number of items in the stack
 	*/
-	int NumCars();
+	int NumItems();
 
 	/**
-	* Prints the name of each car in the stack
+	* Prints the name of each item in the stack
 	*/
-	void PrintAllCars() const;
+	void PrintAllItems() const;
 
 	/**
 	* Runs a basic demo of the class functions
@@ -62,6 +62,6 @@ public:
 	void Demo();
 
 private:
-	std::stack<std::string> cars;
+	std::stack<std::string> items;
 };
 

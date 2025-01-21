@@ -6,59 +6,59 @@ Stack::Stack()
 
 }
 
-void Stack::AddCar(const std::string newCar)
+void Stack::AddItem(const std::string itemToAdd)
 {
-	cars.push(newCar);
+	items.push(itemToAdd);
 }
 
-void Stack::AddCars(const std::vector<std::string>& newCars)
+void Stack::AddItems(const std::vector<std::string>& itemsToAdd)
 {
-	for (const std::string& newCar : newCars)
+	for (const std::string& item : itemsToAdd)
 	{
-		cars.push(newCar);
+		items.push(item);
 	}
 }
 
-std::stack<std::string> Stack::GetAllCars() const
+std::stack<std::string> Stack::GetAllItems() const
 {
 	return std::stack<std::string>();
 }
 
-std::string Stack::PeekNextCar() const
+std::string Stack::PeekNextItem() const
 {
-	return cars.top();
+	return items.top();
 }
 
-std::string Stack::ChangeNextCar(const std::string newCar)
+std::string Stack::ChangeNextItem(const std::string newItem)
 {
-	return cars.top() = newCar;
+	return items.top() = newItem;
 }
 
-void Stack::RemoveNextCar()
+void Stack::RemoveNextItem()
 {
-	cars.pop();
+	items.pop();
 }
 
 bool Stack::IsEmpty()
 {
-	return cars.empty();
+	return items.empty();
 }
 
-int Stack::NumCars()
+int Stack::NumItems()
 {
-	return cars.size();
+	return items.size();
 }
 
-void Stack::PrintAllCars() const
+void Stack::PrintAllItems() const
 {
-	std::stack<std::string> tempCars = cars;
+	std::stack<std::string> tempItems = items;
 
-	std::cout << "Cars in stack: ";
+	std::cout << "Items in stack: ";
 
-	for (int i = 0; i < cars.size(); i++)
+	for (int i = 0; i < items.size(); i++)
 	{
-		std::cout << tempCars.top() << (i == (cars.size() - 1) ? "\n" : ", ");
-		tempCars.pop();
+		std::cout << tempItems.top() << (i == (items.size() - 1) ? "\n" : ", ");
+		tempItems.pop();
 	}
 }
 
@@ -71,13 +71,13 @@ void Stack::Demo()
 	do
 	{
 		std::cout << "\nCHOOSE AN ACTION:\n";
-		std::cout << "[1] Add one car\n"
-				  << "[2] Add multiple cars\n"
-				  << "[3] Look at the next car in the stack\n"
-				  << "[4] Change the next car in the stack\n"
-				  << "[5] Remove the next car from the stack\n"
+		std::cout << "[1] Add one item\n"
+				  << "[2] Add multiple items\n"
+				  << "[3] Look at the next item in the stack\n"
+				  << "[4] Change the next item in the stack\n"
+				  << "[5] Remove the next item from the stack\n"
 				  << "[6] Check if the stack is empty\n"
-				  << "[7] Get the total number of cars in the stack\n"
+				  << "[7] Get the total number of items in the stack\n"
 				  << "[0] Quit\n";
 
 		while (true) {
@@ -100,43 +100,43 @@ void Stack::Demo()
 		case 0:
 			break;
 		case 1:
-			std::cout << "Enter a model name for the car you would like to add:\n";
+			std::cout << "Enter a model name for the item you would like to add:\n";
 			std::cin >> model;
-			AddCar(model);
+			AddItem(model);
 			break;
 		case 2:
 			do
 			{
-				std::cout << "Enter a model name for the car you would like to add or enter 0 if finished:\n";
+				std::cout << "Enter a model name for the item you would like to add or enter 0 if finished:\n";
+				std::cin >> model;
 				if (model != "0")
 				{
-					std::cin >> model;
-					AddCar(model);
+					AddItem(model);
 
 					std::cout << "\n";
-					PrintAllCars();
+					PrintAllItems();
 					std::cout << "\n";
 				}
 			} while (model != "0");
 			break;
 		case 3:
-			std::cout << "Next car in the stack: " << PeekNextCar() << "\n";
+			std::cout << "Next item in the stack: " << PeekNextItem() << "\n";
 			break;
 		case 4:
-			std::cout << "Enter a new model name to replace the next car in the stack:\n";
+			std::cout << "Enter a new model name to replace the next item in the stack:\n";
 			std::cin >> model;
-			ChangeNextCar(model);
+			ChangeNextItem(model);
 			break;
 		case 5:
-			std::cout << "Removing the next car from the stack: " << PeekNextCar() << "\n";
-			RemoveNextCar();
+			std::cout << "Removing the next item from the stack: " << PeekNextItem() << "\n";
+			RemoveNextItem();
 			break;
 		case 6:
-			std::cout << "The stack is " << (IsEmpty() ? "" : "not") << " empty\n";
+			std::cout << "The stack is " << (IsEmpty() ? "" : "not ") << "empty\n";
 			break;
 		case 7:
-			std::cout << "There " << (NumCars() == 1 ? ("is "  + std::to_string(NumCars()) + " car") :
-										               ("are " + std::to_string(NumCars()) + " cars")) 
+			std::cout << "There " << (NumItems() == 1 ? ("is " + std::to_string(NumItems()) + " item") :
+				("are " + std::to_string(NumItems()) + " items"))
 					  << " in the stack\n";
 			break;
 		default:
@@ -144,7 +144,7 @@ void Stack::Demo()
 		}
 
 		std::cout << "\n";
-		PrintAllCars();
+		PrintAllItems();
 
 	} while (choice != 0);
 
