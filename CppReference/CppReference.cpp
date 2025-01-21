@@ -18,6 +18,7 @@ int main()
         std::cout << "[1] Queue\n"
                   << "[2] Stack\n"
                   << "[3] Singly Linked List\n"
+                  << "[4] Doubly Linked List\n"
                   << "[0] Quit\n";
 
         while (true) {
@@ -36,6 +37,7 @@ int main()
         Queue carQueue;
         Stack carStack;
         SinglyLinkedList singlyLinkedList;
+        DoublyLinkedList doublyLinkedList;
 
         switch (choice)
         {
@@ -49,6 +51,8 @@ int main()
                 break;
             case 3:
                 singlyLinkedList.Demo();
+            case 4:
+                doublyLinkedList.Demo();
             default:
                 std::cout << "Invalid choice. Please try again.\n";
         }
