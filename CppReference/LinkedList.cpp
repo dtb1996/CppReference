@@ -22,6 +22,7 @@ void SinglyLinkedList::InsertNodeAtEnd(const std::string value)
 {
 	SinglyLinkedNode* newNode = new SinglyLinkedNode;
 	newNode->item = value;
+	newNode->next = nullptr;
 
 	// If the list is empty, set the new node as the head
 	if (singlyLinkedHead == nullptr)
@@ -168,7 +169,7 @@ void SinglyLinkedList::PrintAllValues()
 	while (current != nullptr)
 	{
 		// Print the current item value
-		std::cout << current->item << ((current->next != nullptr) ? ", " : ""); //TODO: fix access violation bug
+		std::cout << current->item << ((current->next != nullptr) ? ", " : "");
 
 		// Set current to next node
 		current = current->next;
