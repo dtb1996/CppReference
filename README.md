@@ -23,6 +23,7 @@ git clone https://github.com/dtb1996/CppReference.git
 ### Data Structures
 * **Queue**: demonstrates push, pop, front, back, size, and empty functions
 * **Stack**: demostrates push, pop, top, size, and empty functions
+* **Linked List**: demostrates singly and doubly linked list implementations with insert, delete, and traversal functions
 
 More to come!
 
