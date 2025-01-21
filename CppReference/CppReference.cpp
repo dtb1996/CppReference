@@ -51,8 +51,10 @@ int main()
                 break;
             case 3:
                 singlyLinkedList.Demo();
+                break;
             case 4:
                 doublyLinkedList.Demo();
+                break;
             default:
                 std::cout << "Invalid choice. Please try again.\n";
         }
