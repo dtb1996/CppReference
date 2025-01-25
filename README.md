@@ -11,7 +11,7 @@ This Visual Studio project is intended to be used as a quick reference for imple
 * Object-Oriented Design: Examples showcasing inheritance, polymorphism, and encapsulation.
 
 ## Getting Started
-### Prerequisites
+### Prerequisite
 * Visual Studio or other IDE configured to run C++ console applications
 
 ### Cloning the repository
@@ -24,6 +24,7 @@ git clone https://github.com/dtb1996/CppReference.git
 * **Queue**: demonstrates push, pop, front, back, size, and empty functions
 * **Stack**: demostrates push, pop, top, size, and empty functions
 * **Linked List**: demostrates singly and doubly linked list implementations with insert, delete, and traversal functions
+* **Binary Tree**: demonstrates insert, delete, and various traversal functions
 
 More to come!
 
