@@ -5,6 +5,7 @@
 #include "Queue.h"
 #include "Stack.h"
 #include "LinkedList.h"
+#include "BinaryTree.h"
 
 int main()
 {
@@ -19,6 +20,7 @@ int main()
                   << "[2] Stack\n"
                   << "[3] Singly Linked List\n"
                   << "[4] Doubly Linked List\n"
+                  << "[5] Binaray Tree\n"
                   << "[0] Quit\n";
 
         while (true) {
@@ -38,6 +40,7 @@ int main()
         Stack carStack;
         SinglyLinkedList singlyLinkedList;
         DoublyLinkedList doublyLinkedList;
+        BinaryTree binaryTree;
 
         switch (choice)
         {
@@ -54,6 +57,9 @@ int main()
                 break;
             case 4:
                 doublyLinkedList.Demo();
+                break;
+            case 5:
+                binaryTree.Demo();
                 break;
             default:
                 std::cout << "Invalid choice. Please try again.\n";
