@@ -180,7 +180,7 @@ void SinglyLinkedList::PrintAllValues()
 
 void SinglyLinkedList::Demo()
 {
-	std::cout << "\n############################ SINGLY LINKED LIST DEMO ##################################\n\n";
+	std::cout << "\n############################ SINGLY LINKED LIST DEMO ##################################\n";
 
 	int choice;
 

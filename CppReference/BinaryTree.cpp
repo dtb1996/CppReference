@@ -105,7 +105,7 @@ void BinaryTree::LevelOrderTraversal()
 
 void BinaryTree::Demo()
 {
-	std::cout << "\n############################ BINARY TREE DEMO ##################################\n\n";
+	std::cout << "\n############################ BINARY TREE DEMO ##################################\n";
 
 	int choice;
 

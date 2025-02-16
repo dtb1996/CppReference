@@ -78,7 +78,7 @@ void Queue::PrintAllItems() const
 
 void Queue::Demo()
 {
-	std::cout << "\n################################## QUEUE DEMO ##################################\n\n";
+	std::cout << "\n################################## QUEUE DEMO ##################################\n";
 
 	int choice;
 	

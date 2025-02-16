@@ -64,7 +64,7 @@ void Stack::PrintAllItems() const
 
 void Stack::Demo()
 {
-	std::cout << "\n################################## STACK DEMO ##################################\n\n";
+	std::cout << "\n################################## STACK DEMO ##################################\n";
 
 	int choice;
 
