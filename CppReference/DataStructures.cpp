@@ -3,6 +3,7 @@
 #include "Stack.h"
 #include "LinkedList.h"
 #include "BinaryTree.h"
+#include "Graph.h"
 
 DataStructures::DataStructures()
 {
@@ -23,6 +24,8 @@ void DataStructures::Demo()
                   << "[3] Singly Linked List\n"
                   << "[4] Doubly Linked List\n"
                   << "[5] Binary Tree\n"
+                  << "[6] Adjacency Matrix\n"
+                  << "[7] Adjacency List\n"
                   << "[0] Quit\n";
 
         while (true) {
@@ -43,6 +46,7 @@ void DataStructures::Demo()
         SinglyLinkedList singlyLinkedList;
         DoublyLinkedList doublyLinkedList;
         BinaryTree binaryTree;
+        AdjacencyList adjacencyList;
 
         switch (choice)
         {
@@ -62,6 +66,12 @@ void DataStructures::Demo()
             break;
         case 5:
             binaryTree.Demo();
+            break;
+        case 6:
+            
+            break;
+        case 7:
+            adjacencyList.Demo();
             break;
         default:
             std::cout << "Invalid choice. Please try again.\n";
